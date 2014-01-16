@@ -24,12 +24,21 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 group :development do
+
   gem 'guard', "~> 2.2.5"
   gem "guard-rspec", "~> 4.2.4", :require => false
+
+  # Debugging
+  gem 'better_errors'       # Web UI to debug exceptions. Go to /__better_errors to access the latest one
+  gem 'binding_of_caller'  # Retrieve the binding of a method's caller in MRI Ruby >= 1.9.2
+
+  # Performance
+  gem 'rack-mini-profiler'  # Inline app profiler. See ?pp=help for options.
 end
 
 group :test do
-  gem 'coveralls', :require => false
+  gem 'simplecov', :require => false # Test coverage generator. Go to /coverage/ after running tests
+  gem 'coveralls', :require => false # Test coverage website. Go to https://coveralls.io
   gem 'database_cleaner'
 end
 

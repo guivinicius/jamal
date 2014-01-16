@@ -1,8 +1,12 @@
-# Coveralls configuration
-if ENV['CI']
-  require 'coveralls'
-  Coveralls.wear!('rails')
-end
+require 'simplecov'
+
+# # Coveralls configuration
+# if ENV['CI']
+  # require 'coveralls'
+  # SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+# end
+
+SimpleCov.start('rails')
 
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
