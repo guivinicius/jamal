@@ -23,6 +23,9 @@ gem 'jbuilder', '~> 1.2'
 # Simple support for organizing items into parent–children relationships.
 gem 'acts_as_tree', '~> 1.5.0'
 
+# Administration framework
+gem 'activeadmin', :github => 'gregbell/active_admin'
+
 group :development do
 
   # Documentation
