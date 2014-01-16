@@ -2,14 +2,14 @@
 #
 # Table name: places
 #
-#  id             :integer          not null, primary key
-#  name           :string(255)      not null
-#  abbr           :string(255)
-#  position       :integer
-#  parent_id      :integer
-#  children_count :integer          default(0)
-#  created_at     :datetime
-#  updated_at     :datetime
+#  id           :integer          not null, primary key
+#  name         :string(255)      not null
+#  abbr         :string(255)
+#  position     :integer
+#  parent_id    :integer
+#  places_count :integer          default(0)
+#  created_at   :datetime
+#  updated_at   :datetime
 #
 # Indexes
 #
