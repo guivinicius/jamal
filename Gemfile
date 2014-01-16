@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 1.2'
 
 group :development do
 
+  # Documentation
+  gem 'annotate', ">=2.6.0" # Add a comment summarizing the current schema of each model
+
   gem 'guard', "~> 2.2.5"
   gem "guard-rspec", "~> 4.2.4", :require => false
 
