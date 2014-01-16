@@ -28,6 +28,10 @@ group :development do
   gem "guard-rspec", "~> 4.2.4", :require => false
 end
 
+group :test do
+  gem 'coveralls', :require => false
+end
+
 group :development, :test do
   gem "rspec-rails", "~> 2.14.1"
   gem 'factory_girl_rails'
