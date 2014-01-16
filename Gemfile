@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.2'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -22,6 +19,9 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+# Simple support for organizing items into parent–children relationships.
+gem 'acts_as_tree', '~> 1.5.0'
 
 group :development do
 
@@ -49,4 +49,7 @@ group :development, :test do
   gem "rspec-rails", "~> 2.14.1"
   gem 'factory_girl_rails'
   gem 'capybara', '~> 2.2.0'
+
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 end

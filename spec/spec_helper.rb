@@ -22,6 +22,9 @@ RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
   config.order = "random"
 
+  # FactoryGirl
+  config.include FactoryGirl::Syntax::Methods
+
   # Database cleaner configuration
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
