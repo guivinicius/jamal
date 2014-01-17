@@ -19,5 +19,9 @@
 class Place < ActiveRecord::Base
   include ActsAsTree
 
-  acts_as_tree :order => "name", :counter_cache => true
+  acts_as_tree(:order => "position, name", :counter_cache => true)
+
+  validates :name,
+    :presence => true
+
 end
