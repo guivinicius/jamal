@@ -1,6 +1,8 @@
 ActiveAdmin.register Place do
   permit_params :name, :abbr, :position, :parent_id
 
+  menu :priority => 2
+
   sortable :tree => true, :collapsible => true
 
   filter :parent

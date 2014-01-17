@@ -1,6 +1,8 @@
 ActiveAdmin.register AdminUser do
   permit_params :name, :uid, :email, :password, :password_confirmation
 
+  menu :parent => 'Users', :priority => 3
+
   index do
     column :name
     column :uid
