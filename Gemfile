@@ -2,6 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.2'
 
+# Use PostgreSQL as the database for ActiveRecord
+gem 'pg'
+
+# Use Mysql as the database for ActiveRecord
+# gem 'mysql2'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

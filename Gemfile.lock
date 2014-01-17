@@ -159,6 +159,7 @@ GEM
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
+    pg (0.17.1)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.3)
@@ -274,6 +275,7 @@ DEPENDENCIES
   guard-rspec (~> 4.2.4)
   jbuilder (~> 1.2)
   jquery-rails
+  pg
   rack-mini-profiler
   rails (= 4.0.2)
   rspec-rails (~> 2.14.1)
