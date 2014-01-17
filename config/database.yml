@@ -12,7 +12,7 @@ postgresql: &postgresql
   adapter: postgresql
   username: postgres
   password:
-  database: jamal_<%= Rails.env %>;
+  database: jamal_<%= Rails.env %>
   min_messages: ERROR
 
 defaults: &defaults
