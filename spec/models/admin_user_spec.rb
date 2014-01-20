@@ -16,7 +16,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  name                   :string(255)
-#  uid                    :string(255)      default(""), not null
+#  uid                    :string(255)      default("admin"), not null
 #
 # Indexes
 #

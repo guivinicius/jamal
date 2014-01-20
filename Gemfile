@@ -39,6 +39,8 @@ group :development do
 
   # Performance
   gem 'rack-mini-profiler'  # Inline app profiler. See ?pp=help for options.
+
+  gem "quiet_assets", "~> 1.0.2" # Turnoff rails asset pipeline logs
 end
 
 group :test do

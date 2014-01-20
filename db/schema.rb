@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140116193201) do
+ActiveRecord::Schema.define(version: 20140117172508) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -24,9 +27,24 @@ ActiveRecord::Schema.define(version: 20140116193201) do
     t.datetime "updated_at"
   end
 
-  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
-  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace"
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
+  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
+  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+
+  create_table "addresses", force: true do |t|
+    t.string   "street"
+    t.string   "number"
+    t.string   "complement"
+    t.string   "postalcode"
+    t.string   "neighborhood"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "place_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "addresses", ["place_id"], name: "index_addresses_on_place_id", using: :btree
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "",      null: false
@@ -45,9 +63,9 @@ ActiveRecord::Schema.define(version: 20140116193201) do
     t.string   "uid",                    default: "admin", null: false
   end
 
-  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
-  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
-  add_index "admin_users", ["uid"], name: "index_admin_users_on_uid"
+  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
+  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+  add_index "admin_users", ["uid"], name: "index_admin_users_on_uid", using: :btree
 
   create_table "places", force: true do |t|
     t.string   "name",                     null: false
@@ -59,6 +77,6 @@ ActiveRecord::Schema.define(version: 20140116193201) do
     t.datetime "updated_at"
   end
 
-  add_index "places", ["parent_id"], name: "index_places_on_parent_id"
+  add_index "places", ["parent_id"], name: "index_places_on_parent_id", using: :btree
 
 end
