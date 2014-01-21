@@ -24,8 +24,13 @@ class Place < ActiveRecord::Base
   validates :name,
     :presence => true
 
-  has_one :address
+  has_one :address,
+    :dependent => :delete
 
-  accepts_nested_attributes_for :address, :allow_destroy => true
+  has_many :phones,
+    :dependent => :delete_all
+
+  accepts_nested_attributes_for :address, :phones,
+    :allow_destroy => true
 
 end

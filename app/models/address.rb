@@ -22,4 +22,14 @@
 class Address < ActiveRecord::Base
 
   belongs_to :place
+
+  def to_s
+    return "" if self.street.empty?
+    <<-eos
+      #{self.street}, #{self.number} - #{self.city}, #{self.state}
+      #{self.neighborhood}
+      #{self.complement}
+      #{self.postalcode}
+    eos
+  end
 end
