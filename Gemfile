@@ -4,8 +4,6 @@ gem 'rails', '4.0.2'
 
 # Databases
 gem 'pg'
-gem 'mysql2'
-gem 'sqlite3'
 
 # Assets
 gem 'sass-rails', '~> 4.0.0'
