@@ -24,6 +24,10 @@ gem 'acts_as_tree', '~> 1.5.0'
 gem 'activeadmin', :github => 'gregbell/active_admin'
 gem "activeadmin-sortable-tree", :github => "nebirhos/activeadmin-sortable-tree", :branch => "master"
 
+group :production do
+  gem 'rails_12factor' #Heroku deploy only
+end
+
 group :development do
 
   # Documentation
