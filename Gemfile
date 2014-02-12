@@ -4,13 +4,14 @@ gem 'rails', '4.0.2'
 
 # Databases
 gem 'pg'
+gem 'pg_search'
 
 # Assets
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
-gem 'foundation-rails'
+gem 'bootstrap-sass'
 
 gem 'turbolinks' # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 
@@ -47,7 +48,7 @@ group :development do
   # gem 'binding_of_caller'  # Retrieve the binding of a method's caller in MRI Ruby >= 1.9.2
 
   # Performance
-  gem 'rack-mini-profiler'  # Inline app profiler. See ?pp=help for options.
+  # gem 'rack-mini-profiler'  # Inline app profiler. See ?pp=help for options.
 
   gem "quiet_assets", "~> 1.0.2" # Turnoff rails asset pipeline logs
 end
@@ -62,4 +63,6 @@ group :development, :test do
   gem "rspec-rails", "~> 2.14.1"
   gem 'factory_girl_rails'
   gem 'capybara', '~> 2.2.0'
+  gem "launchy", "~> 2.4.2"
+
 end
