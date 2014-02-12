@@ -1,1 +1,27 @@
-<%= link_to "admin", new_admin_user_session_path %>
+<section>
+
+  <div class="col-md-3">
+
+  </div>
+
+  <div class="col-md-6">
+    <%= form_tag(home_index_path, :method => :get, :role => "form", :class => "form-horizontal") do %>
+      <div class="form-group">
+          <%= label_tag :term, "Term", :class => '"control-label"' %>
+          <%= text_field_tag :term, nil, :class => "form-control", :placeholder => "Type your search term" %>
+      </div>
+
+      <div class="form-group">
+      <%= button_tag "Search", :class => "btn btn-primary" %>
+      </div>
+    <% end -%>
+    <hr>
+    <%= render "results" %>
+
+  </div>
+
+  <div class="col-md-3">
+
+  </div>
+
+</section>
