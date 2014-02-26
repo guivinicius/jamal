@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.2'
+gem 'rails', '4.0.3'
 
 # Databases
 gem 'pg'
@@ -12,11 +12,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
-
-gem 'turbolinks' # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-
-# JSON API
-gem 'jbuilder', '~> 1.2'
 
 # Simple support for organizing items into parent–children relationships.
 gem 'acts_as_tree', '~> 1.5.0'
@@ -34,9 +29,6 @@ end
 
 group :development do
 
-  # Layout
-  gem 'rails_layout'
-
   # Documentation
   gem 'annotate', ">=2.6.0" # Add a comment summarizing the current schema of each model
 
@@ -45,12 +37,8 @@ group :development do
 
   # Debugging
   gem 'better_errors'       # Web UI to debug exceptions. Go to /__better_errors to access the latest one
-  # gem 'binding_of_caller'  # Retrieve the binding of a method's caller in MRI Ruby >= 1.9.2
+  gem 'binding_of_caller'  # Retrieve the binding of a method's caller in MRI Ruby >= 1.9.2
 
-  # Performance
-  # gem 'rack-mini-profiler'  # Inline app profiler. See ?pp=help for options.
-
-  gem "quiet_assets", "~> 1.0.2" # Turnoff rails asset pipeline logs
 end
 
 group :test do
@@ -64,5 +52,4 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara', '~> 2.2.0'
   gem "launchy", "~> 2.4.2"
-
 end
