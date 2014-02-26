@@ -1,17 +1,20 @@
 require 'simplecov'
+require 'coveralls'
 
-# # Coveralls configuration
-# if ENV['CI']
-  # require 'coveralls'
-  # SimpleCov.formatter = Coveralls::SimpleCov::Formatter
-# end
-
-SimpleCov.start('rails')
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  Coveralls::SimpleCov::Formatter,
+  SimpleCov::Formatter::HTMLFormatter
+]
+SimpleCov.start('rails') do
+  add_group "Services", "app/services"
+  add_group "Presenters", "app/presenters"
+end
 
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'capybara/rails'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
@@ -24,6 +27,10 @@ RSpec.configure do |config|
 
   # FactoryGirl
   config.include FactoryGirl::Syntax::Methods
+
+  # Devise
+  config.include Devise::TestHelpers, :type => :controller
+  config.extend ControllerMacros, :type => :controller
 
   # Database cleaner configuration
   config.before(:suite) do

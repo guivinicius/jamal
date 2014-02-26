@@ -4,18 +4,15 @@ postgresql: &postgresql
   password:
   database: jamal_<%= Rails.env %>
   min_messages: ERROR
-
-defaults: &defaults
   pool: 5
   timeout: 5000
   host: localhost
-  <<: *<%= ENV['DB'] || "postgresql" %>
 
 development:
-  <<: *defaults
+  <<: *postgresql
 
 test:
-  <<: *defaults
+  <<: *postgresql
 
 production:
-  <<: *defaults
+  <<: *postgresql
