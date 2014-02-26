@@ -12,9 +12,9 @@ cache: bundler
 deploy:
   provider: heroku
   api_key:
-    secure: vEJ3oAAMG5me5R8ZTj8tO6gCrW7iugl9rZ/Mijfq5EwFNxxjTJRPhv7lDdLtBHjDXZamNgTQtDFqd3rzUw02uZ3tF65E6D+lqwziyBeGajsgIAR9eDn4j8wAQsipS8Ib6mztO2GnYMbmuNZ50aquLrJus2niNrZKdpup3kHdr0Q=
+    secure: oBIhRplevd1r/5ySsJaRqUFEZFXwOSV4LrnAI/pqErHbyx/bQguCBA6tY0GJ81Hs/ed7bjFGnXFxfydvMf4DUD1m4fRY16noi7zRHutEn1gfXqFBjHW/Z9jGSTA+II7pF4MPzjIhqeZ+3mOsO1JhZ/dXnUMeqjMUbe4udil6zgY=
   app: jamal-demo
   on:
     repo: guivinicius/jamal
   run:
-    - "rake db:migrate"
+  - rake db:migrate
